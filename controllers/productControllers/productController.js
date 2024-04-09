@@ -114,6 +114,32 @@ const updateProduct = async (req, res) => {
   }
 };
 
+
+
+// for product controller
+// const purchaseProduct = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const { quantity } = req.body;
+//     const product = await Product.findById(id);
+//     if (!product) {
+//       return res.status(404).json({ message: "Product not found" });
+//     }
+//     if (product.quantity === 0) {
+//       return res.status(400).json({ message: "Product is out of stock" });
+//     }
+//     if (quantity > product.quantity) {
+//       return res
+//         .status(400)
+//         .json({ message: "Requested quantity exceeds available quantity" });
+//     }
+//     product.quantity -= quantity;
+//     await product.save();
+//     res.json({ message: `Product quantity decreased by ${quantity}`, product });
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// };
 // Controller function to delete a product by ID
 const deleteProduct = async (req, res) => {
   try {
